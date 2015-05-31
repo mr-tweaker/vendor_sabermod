@@ -12,20 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(info =====================================================================)
-ifdef TARGET_DEVICE
-$(info   TARGET_DEVICE=$(TARGET_DEVICE))
-endif
-ifdef TARGET_BASE_ROM
-$(info   TARGET_BASE_ROM=$(TARGET_BASE_ROM))
-endif
 ifdef SM_AND_NAME
 $(info   TARGET_SABERMOD_ANDROID_GCC_VERSION=$(SM_AND_NAME))
 endif
 ifdef SM_KERNEL_NAME
 $(info   TARGET_SABERMOD_KERNEL_GCC_VERSION=$(SM_KERNEL_NAME))
 endif
+ifeq ($(strip $(USE_KERNEL_OPTIMIZATIONS)),true)
+$(info   KERNEL_OPTIMIZATIONS=true)
+else
+$(info   KERNEL_OPTIMIZATIONS=false)
+endif
+ifeq ($(strip $(USE_SABER_INLINE_KERNEL_BUILDING)),true)
+$(info   SABER_INLINE_KERNEL_BUILDING=true)
+else
+$(info   SABER_INLINE_KERNEL_BUILDING=false)
+endif
 ifdef GCC_OPTIMIZATION_LEVELS
 $(info   OPTIMIZATION_OPTIONS=$(GCC_OPTIMIZATION_LEVELS))
 endif
-$(info =====================================================================)
+ifdef OPT_VERSION
+$(info   OPTIMIZATION VERSION=$(OPT_VERSION))
+endif
