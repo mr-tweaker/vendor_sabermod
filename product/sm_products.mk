@@ -14,40 +14,12 @@
 #
 
 # Filter device
-ifneq ($(filter %flounder,$(TARGET_PRODUCT)),)
-  TARGET_DEVICE := flounder
-endif
-
-ifneq ($(filter %hammerhead,$(TARGET_PRODUCT)),)
-  TARGET_DEVICE := hammerhead
-endif
-
-ifneq ($(filter %mako,$(TARGET_PRODUCT)),)
-  TARGET_DEVICE := mako
-endif
-
-ifneq ($(filter %shamu,$(TARGET_PRODUCT)),)
-  TARGET_DEVICE := shamu
-endif
-
 ifneq ($(filter %m8,$(TARGET_PRODUCT)),)
   TARGET_DEVICE := m8
 endif
 
 # Filter ROM base
-ifneq ($(filter aosp% boostpop% pa% twisted% benzo%,$(TARGET_PRODUCT)),)
-  TARGET_BASE_ROM := aosp
-  include $(SM_VENDOR)/product/aosp_product.mk
-endif
-
-ifneq ($(filter slim% aicp% cm%,$(TARGET_PRODUCT)),)
-  TARGET_BASE_ROM := cm
-  include $(SM_VENDOR)/product/cm_product.mk
-endif
-
-ifneq ($(filter px%,$(TARGET_PRODUCT)),)
-  include $(SM_VENDOR)/product/px_product.mk
-endif
+include $(SM_VENDOR)/product/px_product.mk
 
 # General ROM strings
 

@@ -13,26 +13,6 @@
 # limitations under the License.
 #
 
-ifneq ($(filter flounder,$(TARGET_DEVICE)),)
-  include $(SM_VENDOR)/device/sm_flounder.mk
-  LOCAL_ARCH := arm64
-endif
-
-ifneq ($(filter hammerhead,$(TARGET_DEVICE)),)
-  include $(SM_VENDOR)/device/sm_hammerhead.mk
-  LOCAL_ARCH := arm
-endif
-
-ifneq ($(filter mako,$(TARGET_DEVICE)),)
-  include $(SM_VENDOR)/device/sm_mako.mk
-  LOCAL_ARCH := arm
-endif
-
-ifneq ($(filter shamu,$(TARGET_DEVICE)),)
-  include $(SM_VENDOR)/device/sm_shamu.mk
-  LOCAL_ARCH := arm
-endif
-
 ifneq ($(filter m8,$(TARGET_DEVICE)),)
   include $(SM_VENDOR)/device/sm_m8.mk
   LOCAL_ARCH := arm
