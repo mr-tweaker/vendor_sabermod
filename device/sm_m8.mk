@@ -28,7 +28,7 @@ ifeq ($(strip $(HOST_OS)),linux)
   TARGET_SM_AND := 4.9
   PRODUCT_THREADS := 4
   USE_SABER_INLINE_KERNEL_BUILDING := true
-  ENABLE_STRICT_ALIASING := false
+  LOCAL_STRICT_ALIASING := false
   export USE_KERNEL_OPTIMIZATIONS := true
   export LOCAL_O3 := true
 
@@ -39,8 +39,7 @@ GRAPHITE_KERNEL_FLAGS := \
 endif
 
 # Extra SaberMod GCC C flags for arch target and Kernel
-export EXTRA_SABERMOD_GCC_VECTORIZE_CFLAGS := \
-         -ftree-vectorize \
-         -mvectorize-with-neon-quad
+EXTRA_SABERMOD_GCC_VECTORIZE := \
+  -mvectorize-with-neon-quad
 
 
