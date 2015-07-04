@@ -15,7 +15,7 @@
 
 # Set Optimzation Version
 
-OPT_VERSION := 1.0.0
+OPT_VERSION := 1.0.1
 
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.opt.version=$(OPT_VERSION)
