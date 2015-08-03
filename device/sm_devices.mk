@@ -34,3 +34,6 @@ ifeq ($(strip $(LOCAL_ARCH)),arm64)
 export CROSS_COMPILE_NAME := aarch64-linux-gnu-
 endif
 
+# Use toolchain defaults for cortex and neon flags
+USE_GCC_DEFAULTS := true
+
