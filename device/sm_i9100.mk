@@ -26,7 +26,7 @@ ifeq ($(strip $(HOST_OS)),linux)
   # Sabermod configs
   TARGET_SM_KERNEL := 4.9
   TARGET_SM_AND := 4.9
-  PRODUCT_THREADS := 4
+  PRODUCT_THREADS := 2
   USE_SABER_INLINE_KERNEL_BUILDING := false
   ENABLE_STRICT_ALIASING := false
   export USE_KERNEL_OPTIMIZATIONS := true
