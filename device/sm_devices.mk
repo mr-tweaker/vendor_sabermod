@@ -23,6 +23,21 @@ ifneq ($(filter bacon,$(TARGET_DEVICE)),)
   LOCAL_ARCH := arm
 endif
 
+ifneq ($(filter armani,$(TARGET_DEVICE)),)
+  include $(SM_VENDOR)/device/sm_armani.mk
+  LOCAL_ARCH := arm
+endif
+
+ifneq ($(filter cancro,$(TARGET_DEVICE)),)
+  include $(SM_VENDOR)/device/sm_cancro.mk
+  LOCAL_ARCH := arm
+endif
+
+ifneq ($(filter i9100,$(TARGET_DEVICE)),)
+  include $(SM_VENDOR)/device/sm_i9100.mk
+  LOCAL_ARCH := arm
+endif
+
 # Kernel binary prefix.  The other part of this will go in the kernel sources Makefiles.
 # And also in defconfigs (arch/arm/configs/name_defconfig)(or arm64) CONFIG_CROSS_COMPILE="arm-eabi-" (or "aarch64-")
 

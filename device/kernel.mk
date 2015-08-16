@@ -17,8 +17,25 @@ ifneq ($(filter %bacon,$(TARGET_PRODUCT)),)
   ifneq ($(filter px%,$(TARGET_PRODUCT)),)
     KERNEL_DEFCONFIG := cyanogenmod_bacon_defconfig
   endif
+
+ifneq ($(filter %armani,$(TARGET_PRODUCT)),)
+  KERNEL_DIR := kernel/xiaomi/armani
+  KERNEL_BINARY_IMAGE := zImage-dtb
+  KERNEL_DEFCONFIG := cyanogenmod_armani_defconfig
 endif
 
+ifneq ($(filter %cancro,$(TARGET_PRODUCT)),)
+  KERNEL_DIR := kernel/xiaomi/cancro
+  KERNEL_BINARY_IMAGE := zImage-dtb
+  KERNEL_DEFCONFIG := cancro_user_defconfig
+endif
+
+ifneq ($(filter %i9100,$(TARGET_PRODUCT)),)
+  KERNEL_DIR := kernel/samsung/i9100
+  KERNEL_BINARY_IMAGE := zImage-dtb
+  KERNEL_DEFCONFIG := cyanogenmod_i9100_defconfig
+endif
+endif
 
 ifdef KERNEL_DIR
   include $(KERNEL_DIR)/AndroidKernel_sm.mk
